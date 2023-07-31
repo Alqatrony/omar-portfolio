@@ -5,7 +5,7 @@
 
 body {
     background-color: #fff;
-    background-image: url('images/background.png');
+    background-image: url('./images/background.png');
     background-repeat: no-repeat;
     background-position: center -50px;
     background-size: 107%;
@@ -259,7 +259,7 @@ section {
     position: absolute;
     inset: 0;
     padding: 1rem;
-    background: url(images/hover.svg) no-repeat center center;
+    background: url(./images/hover.svg) no-repeat center center;
     display: flex;
     flex-direction: column;
     justify-content: center;
