@@ -1,9 +1,12 @@
-@import './constants.css';
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Trebuchet+MS&display=swap');
 
 body {
+    background-color: #fff;
+}
+
+body#home-page {
     background-color: #fff;
     background-image: url('./images/background.png');
     background-repeat: no-repeat;
@@ -12,7 +15,13 @@ body {
 }
 
 body::-webkit-scrollbar {
-    display: none; /* For Chrome, Safari and Opera */
+    background-color: rgba(117, 78, 249, 0.5);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #754EF9;
+    border-radius: 10px;
 }
 
 * {
@@ -268,7 +277,7 @@ section {
 
 .content-text {
     color: #f3f3f3;
-    font-size: 18px; 
+    font-size: 18px;
     font-family: Open Sans;
     letter-spacing: 0.01em;
     opacity: 0.5;
@@ -277,7 +286,7 @@ section {
 
 .photo8 .content-text {
     width: 578px;
-    height:108px;
+    height: 108px;
 }
 
 .img-wrapper>img,
@@ -307,7 +316,7 @@ section {
 .expand-button h4 {
     position: relative;
     color: #f3f3f3;
-    font-size: 13px; 
+    font-size: 13px;
     font-family: Open Sans;
     letter-spacing: 0.01em;
     opacity: 0.5;
@@ -434,7 +443,7 @@ input {
     color: #181818;
     background-color: #fff;
     background-clip: padding-box;
-    border:  solid #744df7;
+    border: solid #744df7;
     border-radius: 0.25rem;
 }
 
@@ -513,4 +522,150 @@ footer {
 
 .footer-icons i:hover {
     color: #ddd;
+}
+
+/* cv.html style */
+
+#cv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 50px 0;
+}
+
+#cv-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 80px;
+}
+
+.cv-header {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 42px;
+    margin-left: 80px;
+}
+
+.cv-header img {
+    width: 159.8px;
+}
+
+.cv-header h1 {
+    font: normal normal 600 35px/20px Open Sans;
+    color: #202020;
+}
+
+.cv-header p {
+    font: normal normal normal 18px/20px Open Sans;
+    color: #202020;
+    opacity: 0.5;
+}
+
+.cv-body {
+    height: 600px;
+    display: flex;
+    gap: 190px;
+}
+
+.group {
+    display: grid;
+    height: 100%;
+}
+
+.group-2 {
+    align-self: end;
+    height: 250px;
+}
+
+.group-1 .title,
+.group-2 .title {
+    color: #754ef9;
+    font: normal normal 600 35px/24px Open Sans;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.group-title {
+    color: #202020;
+    font: normal normal normal 18px/21px Roboto;
+}
+
+.group-details {
+    color: #202020;
+    font: normal normal 300 14px/24px Open Sans;
+    opacity: 0.5;
+}
+
+.group-details a {
+    color: #754ef9;
+    text-decoration: none;
+}
+
+.fourth .education-details {
+    height: 51px;
+}
+
+.progress-bar-container {
+    width: 200px;
+    height: 10px;
+    background-color: rgba(117, 78, 249, 0.5);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #754ef9;
+    border-radius: 5px;
+    position: relative;
+}
+
+.progress-bar::after {
+    content: attr(data-percentage) '%';
+    position: absolute;
+    right: 0;
+    top: 100%;
+    color: #754ef9;
+    font-size: 8px;
+    font-family: 'HelveticaNeue-Medium', 'Helvetica Neue';
+    font-weight: 500;
+}
+
+.progress-text {
+    display: grid;
+    width: 100%;
+}
+
+.percentage {
+    display: none;
+}
+
+.maximum {
+    color: #754ef9;
+    font-size: 10px;
+    font-family: 'HelveticaNeue-Medium', 'Helvetica Neue';
+    font-weight: 500;
+    justify-self: end;
+}
+
+.social-media-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-media-icons i {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #754ef9;
+    transition: color 0.3s;
 }
