@@ -6,57 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
     <title>Document</title>
 </head>
 
 <body id="home-page">
     <header>
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1643px" height="130"
-            viewBox="0 13 1658 145">
-            <g id="Group_58" data-name="Group 58" transform="translate(-137 12)">
-                <a href="#" id="LOGO" transform="translate(-2 -5)">
-                    <text id="Portfolio" transform="translate(139 78)" fill="#754ef9" font-size="41"
-                        font-family="Trebuchet MS" font-weight="700">
-                        <tspan x="0" y="0">Portfolio</tspan>
-                    </text>
-                </a>
-                <g id="Group_12" data-name="Group 12" transform="translate(194 1.169)">
-                    <text id="ABOUT_ME" data-name="ABOUT ME" transform="translate(537 65.831)" fill="#101010"><a
-                            href="#about" x="0" y="0">ABOUT ME</a></text>
-                    <text id="Work" transform="translate(754 65.831)" fill="#101010"><a href="#work" x="0"
-                            y="0">Work</a></text>
-                    <text id="Connect" transform="translate(909 65.831)" fill="#101010"><a href="#contact" x="0"
-                            y="0">Connect</a></text>
-                </g>
-                <a href="cv.html" id="BUTTON-2" data-name="BUTTON" transform="translate(71 -30)">
-                    <g id="BUTTON-3" data-name="BUTTON" transform="translate(1449 58)">
-                        <g transform="matrix(1, 0, 0, 1, -1383, -40)">
-                            <rect id="BUTTON-4" data-name="BUTTON" width="260" height="60" rx="30"
-                                transform="translate(1383 40)" fill="#754ef9" />
-                        </g>
-                        <text id="DOWNLOAD_CV" data-name="DOWNLOAD CV" transform="translate(58 38)" fill="#fff">
-                            <tspan x="0" y="0">DOWNLOAD CV</tspan>
-                        </text>
-                    </g>
-                </a>                
-            </g>
-        </svg>
+        <div id="header-content">
+            <a href="#" id="LOGO">
+                <h1>Portfolio</h1>
+            </a>
+            <nav id="Group_12">
+                <a href="#about">ABOUT ME</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Connect</a>
+            </nav>
+            <a href="cv.html" id="BUTTON-2" class="button">
+                <span>DOWNLOAD CV</span>
+            </a>
+        </div>
+        <div id="menu-toggle"></div>
     </header>
     <section id="home">
-        <div class="container">
-            <div class="content">
-                <span class="title">
-                    <h1 class="my">MY</h1>
-                    <h1 class="work"><span class="rev">W</span><span class="letter">O</span><span
-                            class="rev">R</span><span class="rev">K</span>
-                    </h1>
-                </span>
-                <h1 class="myWORK">UX Designer & Graphic design</h1>
+        <div class="home-wrapper">
+            <div class="container">
+                <div class="content">
+                    <span class="title">
+                        <h1 class="my">MY</h1>
+                        <h1 class="work"><span class="rev">W</span><span class="letter">O</span><span
+                                class="rev">R</span><span class="rev">K</span>
+                        </h1>
+                    </span>
+                    <h1 class="myWORK">UX Designer & Graphic design</h1>
+                </div>
             </div>
+            <div class="home-content">
+                <h1 class="content2">BE CREATIVE</h1>
+            </div>
+        </div>
+        <div class="home-content2">
             <span class="social-media">
                 <a href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="36" viewBox="0 0 19 36" fill="none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18.204" height="35.058" viewBox="0 0 18.204 35.058" fill="none">
                         <path
                             d="M12.1333 20.7195H16.4667L18.2 13.7075H12.1333V10.2015C12.1333 8.39591 12.1333 6.6955 15.6 6.6955H18.2V0.805418C17.6349 0.730039 15.5012 0.559998 13.2479 0.559998C8.54187 0.559998 5.2 3.46472 5.2 8.7991V13.7075H0V20.7195H5.2V35.62H12.1333V20.7195Z"
                             fill="#754EF9" />
@@ -78,7 +69,6 @@
                 </a>
             </span>
         </div>
-        <h1 class="content2">BE CREATIVE</h1>
     </section>
 
     <section id="about">
@@ -460,7 +450,7 @@
                         <input name="message" class="form-control" placeholder="Send your message" required></input>
                         <button type="submit" name="submit" class="btn send">Send</button>
                     </div>
-                </form>                                
+                </form>
             </div>
         </div>
     </section>
@@ -479,7 +469,7 @@
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
-        </footer>        
+        </footer>
     </div>
 
     <script src="script.js"></script>

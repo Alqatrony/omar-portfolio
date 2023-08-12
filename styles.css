@@ -32,24 +32,34 @@ body::-webkit-scrollbar-thumb {
 }
 
 header {
-    top: 0;
-    width: 100%;
+    height: 100px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    padding: 0 110px;
 }
 
-.logo {
-    top: 35px;
-    left: 137px;
-    width: 167px;
-    height: 47px;
+#header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+}
+
+#LOGO {
+    color: #754ef9;
+    text-decoration: none;
+}
+
+#LOGO h1 {
+    font: normal normal bold 37px/47px Trebuchet MS;
+    font-weight: 700;
 }
 
 header nav {
     display: flex;
-    gap: 97px;
-    font: normal normal 600 23px/32px Open Sans;
+    align-self: center;
+    gap: 91px;
 }
 
 header nav a {
@@ -58,19 +68,123 @@ header nav a {
 }
 
 #Group_12 a {
-    font-size: 23px;
+    font: normal normal 600 20.5px/32px Open Sans;
     font-family: OpenSans-Semibold, Open Sans;
     font-weight: 600;
+    text-decoration: none;
+    color: #101010;
+    position: relative;
 }
 
-#DOWNLOAD_CV tspan {
-    font-size: 19px;
-    font-family: OpenSans-Semibold, Open Sans;
-    font-weight: 600;
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 233.1px;
+    height: 53.79px;
+    background-color: #754EF9;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #fff;
+    font: normal normal 500 19.3px/26px 'Open Sans';
 }
 
-#home {
-    height: 750px;
+#menu-toggle {
+    right: 137px;
+    width: 50px;
+    height: 50px;
+    background: #744df7;
+    border-radius: 10px;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-toggle::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    transform: translateY(-5px);
+    transition: 0.2s;
+}
+
+#menu-toggle::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    transform: translateY(5px);
+    transition: 0.2s;
+}
+
+#menu-toggle.active::before {
+    transform: translateY(0) rotate(45deg);
+}
+
+#menu-toggle.active::after {
+    transform: translateY(0) rotate(-45deg);
+}
+
+@media (max-width: 991px) {
+    header {
+        padding: 0 40px;
+    }
+
+    header nav {
+        position: absolute;
+        width: 100%;
+        height: 0px;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        overflow: hidden;
+        top: 80px;
+        left: 0;
+        transition: 0.3s ease-in-out;
+    }
+
+    header nav.active {
+        height: calc(100% - 100px);
+    }
+
+    #Group_12 {
+        display: flex;
+        flex-direction: column;
+        opacity: 1 !important;
+        gap: 0px;
+        text-align: center;
+    }
+
+    #Group_12 a {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    #BUTTON-2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    #BUTTON-2.active {
+        opacity: 1;
+        /* Fully visible when active */
+    }
+
+    #Group_12.active+#BUTTON-2 {
+        display: flex;
+    }
+
+    #menu-toggle {
+        display: flex;
+    }
 }
 
 section {
@@ -81,24 +195,42 @@ section {
     align-items: center;
 }
 
+#home {
+    position: relative;
+    height: 770px;
+    align-items: center;
+}
+
+.home-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .container {
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 60px);
+}
+
+.home-content {
     position: absolute;
-    left: 300px;
-    gap: 325px;
+    transform: translate(50px, 400px);
 }
 
 .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    justify-self: center;
     align-items: center;
 }
 
 .title {
     display: flex;
-    font: normal normal bold 150px/208px Trebuchet MS;
+    font: normal normal bold 110px/150px 'Trebuchet MS';
 }
 
 .my {
@@ -117,7 +249,7 @@ section {
     top: calc(50% - .5*0.125em);
     left: -20px;
     /* Anchor the line on the left */
-    width: 660px;
+    width: 510px;
     height: 25px;
     background: #ffff;
     box-shadow: 0px 3px 6px #00000029;
@@ -130,7 +262,7 @@ section {
     }
 
     to {
-        width: 660px;
+        width: 510px;
     }
 }
 
@@ -150,14 +282,14 @@ section {
 }
 
 .myWORK {
-    font: normal normal 600 44px/60px Open Sans;
+    font: normal normal 600 35px/60px Open Sans;
     color: #101010;
 }
 
 .social-media {
     display: flex;
     flex-direction: column;
-    position: relative;
+    padding-right: 60px;
     width: 30.36px;
     height: 497.7px;
     justify-content: center;
@@ -171,7 +303,7 @@ section {
     width: 1px;
     height: 101.2px;
     background: #754EF9;
-    top: 0;
+    top: 135px;
 }
 
 .social-media::after {
@@ -180,7 +312,7 @@ section {
     width: 1px;
     height: 101.2px;
     background: #754EF9;
-    bottom: 0;
+    bottom: 135px;
 }
 
 .content2 {
@@ -188,7 +320,6 @@ section {
     color: #754EF9;
     width: 130px;
     height: 26px;
-    transform: translate(-721px, 350px);
 }
 
 #about {
@@ -561,6 +692,7 @@ footer {
 
 .cv-header p {
     font: normal normal normal 18px/20px Open Sans;
+    display: contents;
     color: #202020;
     opacity: 0.5;
 }
@@ -602,6 +734,7 @@ footer {
     color: #202020;
     font: normal normal 300 14px/24px Open Sans;
     opacity: 0.5;
+    display: flex;
 }
 
 .group-details a {
@@ -668,4 +801,57 @@ footer {
     font-size: 20px;
     color: #754ef9;
     transition: color 0.3s;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .cv-body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 80px;
+        justify-content: center;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    .cv-body {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+        width: 100%;
+        gap: 20px;
+        padding: 0 40px;
+    }
+
+    .cv-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .cv-header img {
+        width: 159.8px;
+    }
+
+    .cv-header h1 {
+        line-height: 100%;
+    }
+
+    .group {
+        height: 100%;
+        gap: 50px;
+    }
+
+    .group-details {
+        display: contents;
+    }
+
+    .progress-text {
+        width: 65%;
+    }
+
 }
