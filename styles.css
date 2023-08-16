@@ -24,6 +24,13 @@ body::-webkit-scrollbar-thumb {
     border-radius: 10px;
 }
 
+@media (max-width: 991px) {
+    body#home-page {
+        background-position: center -100px;
+        background-size: 107% 700px;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -37,6 +44,7 @@ header {
     align-items: center;
     justify-content: center;
     padding: 0 110px;
+    z-index: 3;
 }
 
 #header-content {
@@ -44,6 +52,7 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-grow: 1;
+    z-index: 3;
 }
 
 #LOGO {
@@ -87,6 +96,7 @@ header nav a {
     text-decoration: none;
     color: #fff;
     font: normal normal 500 19.3px/26px 'Open Sans';
+    z-index: 10;
 }
 
 #menu-toggle {
@@ -132,15 +142,13 @@ header nav a {
 @media (max-width: 991px) {
     header {
         padding: 0 40px;
+        z-index: 10;
     }
 
     header nav {
         position: absolute;
         width: 100%;
-        height: 0px;
-        background: rgba(255, 255, 255, 0.5);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        height: 1px;
         overflow: hidden;
         top: 80px;
         left: 0;
@@ -149,6 +157,10 @@ header nav a {
 
     header nav.active {
         height: calc(100% - 100px);
+        background-color: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        z-index: 10;
     }
 
     #Group_12 {
@@ -165,7 +177,7 @@ header nav a {
 
     #BUTTON-2 {
         position: absolute;
-        top: 50%;
+        top: 70%;
         left: 50%;
         transform: translateX(-50%);
         display: none;
@@ -178,12 +190,13 @@ header nav a {
         /* Fully visible when active */
     }
 
-    #Group_12.active+#BUTTON-2 {
+    #Group_12.active + #BUTTON-2 {
         display: flex;
     }
 
     #menu-toggle {
         display: flex;
+        z-index: 10;
     }
 }
 
@@ -241,6 +254,9 @@ section {
     display: flex;
     position: relative;
     color: #754EF9;
+}
+
+#home .work {
     transform-style: preserve-3d;
 }
 
@@ -254,6 +270,7 @@ section {
     background: #ffff;
     box-shadow: 0px 3px 6px #00000029;
     content: "";
+    z-index: -1;
 }
 
 @keyframes stretch {
@@ -272,13 +289,7 @@ section {
 
 
 .letter {
-    overflow: visible;
-    white-space: pre;
-    transform: rotatey(-1deg) scalex(1.00061);
-}
-
-.rev {
-    z-index: 1;
+    transform: rotatey(-0.5deg);
 }
 
 .myWORK {
@@ -322,10 +333,69 @@ section {
     height: 26px;
 }
 
+@media ( max-width: 991px ) {
+
+    section {
+        padding: 0 40px;
+    }
+
+    #home {
+        height: 60vh;
+    }
+
+    .home-wrapper {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title {
+        font: normal normal bold 50px/70px 'Trebuchet MS';
+        position: relative;
+        z-index: 2;
+    }
+
+    .work {
+        z-index: -1;
+    }
+
+    .work::after {
+        width: 230px;
+        height: 12.5px;
+        left: -10px;
+    }
+
+    .myWORK {
+        font: normal normal 600 15px/60px Open Sans;
+    }
+
+    .my {
+        margin-right: 15px;
+    }
+
+    @keyframes stretch {
+        from {
+            width: 0px;
+        }
+    
+        to {
+            width: 230px;
+        }
+    }
+
+    .home-content {
+        transform: translate(-97px, 165px);
+    }
+
+    .social-media {
+        display: none;
+    }
+}
+
 #about {
     flex-direction: column;
     height: 1080px;
-    gap: 148px;
+    gap: 48px;
 }
 
 .container1 {
@@ -356,9 +426,62 @@ section {
     cursor: pointer;
 }
 
+/* Media Query for Tablets (between 768px and 991px) */
+@media (max-width: 991px) {
+    #about {
+        height: 100%;
+    }
+
+    .container1 {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .my-P {
+        font-size: 36px;
+    }
+    .UX {
+        font-size: 18px;
+    }
+    .rectangle1 svg, .rectangle2 svg, .rectangle3 svg {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Media Query for iPads and Nest Hub */
+@media (min-width: 768px) and (max-width: 1280px) {
+    #about {
+        height: 100%;
+        padding-top: 50px;
+    }
+
+    .container1 {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+/* Media Query for Mobiles (max-width of 767px) */
+@media (max-width: 767px) {
+    #about {
+        height: 100%;
+        gap: 15px;
+    }
+    .my-P {
+        font-size: 30px;
+    }
+    .UX {
+        font-size: 16px;
+    }
+    .rectangle1 svg, .rectangle2 svg, .rectangle3 svg {
+        width: 100%;
+    }
+}
+
 #work {
     display: flex;
-    height: 1500px;
+    height: auto;
 }
 
 .grid-container {
@@ -393,6 +516,7 @@ section {
 .img-wrapper {
     position: relative;
     overflow: hidden;
+    height: 441px;
 }
 
 .img-wrapper>.content-details {
@@ -433,6 +557,11 @@ section {
     transform: translateX(0);
 }
 
+.img-wrapper img {
+    max-width: 100%;
+    height: auto;
+}
+
 .expand-button {
     display: flex;
     position: absolute;
@@ -454,9 +583,159 @@ section {
     align-self: flex-end;
 }
 
+@media ( max-width: 991px ) {
+    #work {
+        height: 100%;
+        margin-top: 50px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photo1, .photo2, .photo3, .photo4, .photo5, .photo6, .photo7, .photo8 {
+        width: 100%;
+        height: auto;
+    }
+    
+    .content-text {
+        width: 100%;
+        height: auto;
+    }
+
+    .photo8 .content-text {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content-text {
+        width: 100%;
+        height: auto;
+        font-size: 15px;
+    }
+
+    .photo8 .content-text {
+        width: 100%;
+        height: auto;
+    }
+
+    .expand-button {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .expand-button h4 {
+        font-size: 12px;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .content-text {
+        font-size: 16px;
+    }
+
+    .photo8 {
+        grid-column: span 1; /* Override to make it full width on mobile */
+    }
+
+    .img-wrapper > .content-details {
+        padding: 0.5rem;
+    }
+
+    .photo8 .content-title svg {
+        width: 100px;
+    }
+
+    .expand-button {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .expand-button h4 {
+        font-size: 12px;
+    }
+
+    .photo8 .content-text {
+        width: 100%;
+        height: auto;
+        font-size: 10px;
+        transform: translateY(-15px);
+    }
+
+    .photo8 .expand-button img {
+        width: 15px;
+    }
+}
+
+/* Tablets (like iPads) and Nest Hub */
+@media (min-width: 481px) and (max-width: 1280px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "photo1 photo2"
+            "photo8 photo8"
+            "photo3 photo4"
+            "photo5 photo6"
+            "photo7 photo7";
+    }
+
+    .photo1 { grid-area: photo1; }
+    .photo2 { grid-area: photo2; }
+    .photo3 { grid-area: photo3; }
+    .photo4 { grid-area: photo4; }
+    .photo5 { grid-area: photo5; }
+    .photo6 { grid-area: photo6; }
+    .photo7 { grid-area: photo7; }
+    .photo8 { grid-area: photo8; }
+
+    .content-text {
+        font-size: 17px;
+    }
+
+    .photo8 .content-text {
+        font-size: 17px;
+    }
+
+    .expand-button h4 {
+        font-size: 13px;
+    }
+}
+
+/* Additional styles for Nest Hub */
+@media (min-width: 801px) and (max-width: 1280px) {
+    .content-text {
+        font-size: 20px;
+    }
+
+    .photo8 .content-text {
+        font-size: 20px;
+    }
+
+    .expand-button {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .expand-button h4 {
+        font-size: 15px;
+    }
+}
+
 .brief {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 50px;
 }
 
@@ -522,6 +801,67 @@ section {
     margin: 84px;
 }
 
+@media (max-width: 1024px) {
+    #brief {
+        height: 100%;
+        margin-top: 50px;
+    }
+
+    .brief {
+        gap: 20px;
+    }
+    .rectangle-bg {
+        width: 80%; /* Relative width */
+        height: auto;
+    }
+    .my-card {
+        width: 90%;
+    }
+    .my-card-content p {
+        width: 80%;
+        font-size: 12px;
+    }
+}
+
+/* Media Query for Mobiles (max-width of 767px) */
+@media (max-width: 767px) {
+    .brief {
+        gap: 20px;
+    }
+
+    .my-Brief {
+        padding: 0 20px;
+    }
+    .my-Name {
+        font-size: 30px;
+    }
+    .my-Brief p {
+        font-size: 18px;
+    }
+    .rectangle-bg {
+        width: 100%;
+        padding: 20px;
+    }
+    .my-card {
+        width: 100%;
+        box-shadow: none;
+    }
+    .my-card-content {
+        padding: 20px;
+        gap: 20px;
+    }
+    .my-card-content img {
+        width: 150px;
+    }
+    .my-card-content p {
+        width: 100%;
+        font-size: 12px;
+    }
+    .slider_dot {
+        margin: 40px 0;
+    }
+}
+
 #contact {
     height: 590px;
 }
@@ -557,7 +897,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
 }
 
 input {
@@ -601,6 +941,33 @@ input {
 
 .btn.send {
     width: 258.732px;
+}
+
+/* Media Query for Mobiles and Nest Hubs (max-width of 767px) */
+@media (max-width: 767px) {
+    .contact-content h1 {
+        font-size: 30px;
+        width: 100%;
+    }
+    .contact-content p {
+        font-size: 18px;
+    }
+    #input_bar {
+        width: 100%;
+    }
+    .form-control {
+        width: 65%;
+    }
+    .btn {
+        width: 30%;
+    }
+    .input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .form-control, .btn {
+        width: 100%;
+    }
 }
 
 footer {
@@ -653,6 +1020,57 @@ footer {
 
 .footer-icons i:hover {
     color: #ddd;
+}
+
+/* Media Query for Tablets (between 768px and 1024px) */
+@media (min-width: 481px) and (max-width: 1280px) {
+    footer {
+        padding: 0 15px;
+    }
+    .footer-logo {
+        font-size: 40px;
+    }
+    .footer-link {
+        font-size: 18px;
+    }
+    .footer-icons i {
+        font-size: 24px;
+    }
+    .footer-text {
+        gap: 40px;
+    }
+    .footer-icons {
+        gap: 20px;
+    }
+}
+
+/* Media Query for Mobiles and Nest Hubs (max-width of 767px) */
+@media (max-width: 767px) {
+    footer {
+        padding: 20px 30px;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .footer-logo {
+        font-size: 36px;
+    }
+    .footer-text {
+        gap: 20px;
+    }
+    .footer-icons {
+        gap: 15px;
+    }
+    .footer-link {
+        font-size: 16px;
+    }
+    .footer-icons i {
+        font-size: 22px;
+    }
 }
 
 /* cv.html style */
